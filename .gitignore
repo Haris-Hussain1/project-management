@@ -1,37 +1,41 @@
-# =========================
+@"
+# ================================
+# Environment / secrets
+# ================================
+.env
+.env.*
+!.env.example
+
+# ================================
 # Python / Django
-# =========================
+# ================================
 __pycache__/
 *.py[cod]
+*$py.class
 *.pyo
 *.pyd
-
-*.sqlite3
-db.sqlite3
 
 .venv/
 venv/
 env/
 ENV/
 
+*.sqlite3
+*.sqlite3-journal
+
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .coverage
 htmlcov/
-.mypy_cache/
 
 # Django
 staticfiles/
 media/
 
-# Environment variables
-.env
-.env.*
-!.env.example
-
-
-# =========================
-# Node / React
-# =========================
+# ================================
+# Node / React / Vite
+# ================================
 node_modules/
 dist/
 dist-ssr/
@@ -43,37 +47,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-
-# =========================
-# Logs
-# =========================
-logs/
-*.log
-
-
-# =========================
-# Editors / IDEs
-# =========================
+# ================================
+# IDE / Editor
+# ================================
 .vscode/*
 !.vscode/extensions.json
 
 .idea/
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-
-# =========================
+# ================================
 # OS
-# =========================
+# ================================
+.DS_Store
 Thumbs.db
-
-
-# =========================
-# Build / Cache
-# =========================
-.cache/
-.parcel-cache/
+"@ | Set-Content .gitignore
